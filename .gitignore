@@ -1,0 +1,63 @@
+# Pastas binárias
+bin/
+obj/
+
+# Dependências do NuGet
+*.nuget.props
+*.nuget.targets
+Packages/
+
+# Arquivos de compilação
+*.dll
+*.exe
+*.pdb
+*.dll.config
+*.exe.config
+
+# Arquivos de publicação
+*.publishsettings
+*.pubxml
+*.publishproj
+
+# Arquivos de projeto
+*.user
+*.vscode
+*.suo
+*.sln.docstates
+
+# Arquivos de log
+*.logs
+
+# Arquivos de configuração local
+appsettings.Development.json
+appsettings.Production.json
+
+# Arquivos temporários
+*~
+*.swp
+*.tmp
+*.bak
+*.cache
+
+# Arquivos do Visual Studio
+.vs/
+*.vspscc
+*.sln.ide
+
+# Arquivos de teste
+TestResults/
+
+# Arquivos de cache do ReSharper
+_ReSharper*/
+
+# Arquivos de análise de código
+*.DotSettings.user
+
+# Outros arquivos gerados
+*.log
+Thumbs.db
+
+# Ignorar pacote de node_modules (caso esteja usando o Node.js)
+node_modules/
+
+

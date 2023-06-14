@@ -1,0 +1,65 @@
+﻿@page
+@model IndexModel
+
+@using MessagesApp.Consumer.Logs.Persistence
+@inject LogMensagensPersistence logMensagensPersistence
+
+@{
+    ViewData["Title"] = "Página inicial";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Log de Mensagens</h2>
+    <p>
+        <button onclick="recarregarPagina()" class="btn btn-secondary btn-sm">Atualizar</button>
+    </p>
+    <hr />
+</div>
+
+<div class="table-responsive">
+    <table id="consulta" class="table table-hover table-sm table-striped">
+        <thead>
+            <tr>
+                <th>Data e Hora</th>
+                <th>Email para</th>
+                <th>Assunto</th>
+                <th>Conteúdo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in logMensagensPersistence.GetAll())
+            {
+                <tr>
+                    <td>@item.DataHoraEnvio?.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@item.EmailPara</td>
+                    <td>@item.Assunto</td>
+                    <td>@item.Conteudo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Styles {
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+}
+
+@section Scripts {
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#consulta").DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json'
+                }
+            });
+        })
+
+        function recarregarPagina() {
+            location.reload();
+        }
+    </script>
+}

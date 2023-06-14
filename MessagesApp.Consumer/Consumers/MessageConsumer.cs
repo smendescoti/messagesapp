@@ -84,7 +84,7 @@ namespace MessagesApp.Consumer.Consumers
                             });
 
                             //retirar o item da fila
-                            //_model.BasicAck(args.DeliveryTag, false);
+                            _model.BasicAck(args.DeliveryTag, false);
 
                             break;
                     }

@@ -30,7 +30,7 @@
             @foreach (var item in logMensagensPersistence.GetAll())
             {
                 <tr>
-                    <td>@item.DataHoraEnvio?.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@item.DataHoraEnvio?.ToString("dd/MM/yyyy")</td>
                     <td>@item.EmailPara</td>
                     <td>@item.Assunto</td>
                     <td>@item.Conteudo</td>
